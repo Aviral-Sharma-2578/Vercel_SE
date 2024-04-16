@@ -1,7 +1,6 @@
 import User from "../../models/user";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-export const dynamic = "force-static";
 
 export async function POST(req) {
   const { emailid, username, password, isAdmin } = await req.json();

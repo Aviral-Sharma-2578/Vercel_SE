@@ -1,6 +1,5 @@
 import Issue from "@/app/models/issue";
 import { NextResponse } from "next/server";
-export const dynamic = "force-static";
 
 export async function GET() {
   try {

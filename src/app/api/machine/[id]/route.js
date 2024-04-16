@@ -1,6 +1,5 @@
 import Machine from "@/app/models/machine";
 import { NextResponse } from "next/server";
-export const dynamic = "force-static";
 
 export async function GET(request, { params }) {
   const { id } = params;

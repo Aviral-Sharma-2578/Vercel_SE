@@ -1,7 +1,6 @@
 import Machine from "@/app/models/machine";
 import { connectToDB } from "@/utils/database";
 import { NextResponse } from "next/server";
-export const dynamic = "force-static";
 
 export async function GET() {
   try {

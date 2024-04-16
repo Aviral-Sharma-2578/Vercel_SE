@@ -2,9 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-export const dynamic = "force-static";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const styles = `
 .container {
@@ -68,7 +67,7 @@ const page = () => {
     email_id: "",
     person_name: "",
     mobile_number: "",
-    category:""
+    category: "",
   };
 
   const [formData, setFormData] = useState(defaultFormData);
@@ -92,10 +91,10 @@ const page = () => {
       "Content-Type": "application/json",
     });
     if (!res.ok) {
-      toast.error("Something went wrong! Try again")
+      toast.error("Something went wrong! Try again");
       throw new Error("Failed to add person.");
     }
-    toast.success("Person Added Successfully")
+    toast.success("Person Added Successfully");
     router.refresh();
     router.push("/showPerson");
   };
@@ -173,36 +172,28 @@ const page = () => {
               </div>
 
               <div className="mb-4">
-                  <label
-                    className="block text-s font-semibold"
-                    htmlFor="machine_id"
-                  >
-                    Category
-                  </label>
-                  <select
-                    className="w-full mt-1 py-2 px-3 border border-gray-300 bg-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                    id="machine_id"
-                    name="category"
-                    value={formData.category}
-                    onChange={handleChange}
-                  >
-                    <option value="">Select Category</option>
-                    <option value="ug">
-                      Undergraduate
-                    </option>
-                    <option value="pg">
-                      Postgraduate
-                    </option>
-                    <option value="phd">
-                      PHD
-                    </option>
-                    <option value="prof">
-                     Professor
-                    </option>
-                    <option value="other">Others</option>
-                  </select>
-                </div>
-              
+                <label
+                  className="block text-s font-semibold"
+                  htmlFor="machine_id"
+                >
+                  Category
+                </label>
+                <select
+                  className="w-full mt-1 py-2 px-3 border border-gray-300 bg-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  id="machine_id"
+                  name="category"
+                  value={formData.category}
+                  onChange={handleChange}
+                >
+                  <option value="">Select Category</option>
+                  <option value="ug">Undergraduate</option>
+                  <option value="pg">Postgraduate</option>
+                  <option value="phd">PHD</option>
+                  <option value="prof">Professor</option>
+                  <option value="other">Others</option>
+                </select>
+              </div>
+
               <div className="flex -mx-3">
                 <div className="w-full px-3 mt-5">
                   <button
