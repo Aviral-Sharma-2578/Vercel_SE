@@ -20,7 +20,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlayList";
 import CoffeeMakerIcon from "@mui/icons-material/CoffeeMaker";
-import AddCardIcon from '@mui/icons-material/AddCard';
+import AddCardIcon from "@mui/icons-material/AddCard";
 
 const drawerWidth = 265;
 
@@ -56,13 +56,20 @@ const Nav = () => {
           <ListItem key={"MAKERSPACE"} disablePadding>
             <Link href="https://www.iiti.ac.in/public/storage/BoG/48th_BoG.pdf">
               <ListItemButton>
-                <ListItemIcon >
-                  <InboxIcon className="text-indigo-600 text-5xl"/>
+                <ListItemIcon>
+                  <InboxIcon className="text-indigo-600 text-5xl" />
                 </ListItemIcon>
                 <div className="flex flex-col">
-                  <Typography variant="h6" className="text-xl font-serif font-bold">MAKERSPACE</Typography>
+                  <Typography
+                    variant="h6"
+                    className="text-xl font-serif font-bold"
+                  >
+                    MAKERSPACE
+                  </Typography>
                   <div className="flex-grow flex justify-center text-justify">
-                  <Typography className="font-serif font-bold">IIT Indore</Typography>
+                    <Typography className="font-serif font-bold">
+                      IIT Indore
+                    </Typography>
                   </div>
                 </div>
               </ListItemButton>
@@ -75,10 +82,12 @@ const Nav = () => {
             <Link href="/dashboard">
               <ListItemButton>
                 <ListItemIcon>
-                  <DashboardIcon className="text-indigo-500 text-2xl"/>
+                  <DashboardIcon className="text-indigo-500 text-2xl" />
                 </ListItemIcon>
                 {/* <ListItemText primary={"Dashboard"} /> */}
-                <Typography variant="h7" className="text-lg font-semibold">Dashboard</Typography>
+                <Typography variant="h7" className="text-lg font-semibold">
+                  Dashboard
+                </Typography>
               </ListItemButton>
             </Link>
           </ListItem>
@@ -86,31 +95,37 @@ const Nav = () => {
             <Link href="/showPerson">
               <ListItemButton>
                 <ListItemIcon>
-                  <PersonIcon className="text-indigo-500 text-2xl"/>
+                  <PersonIcon className="text-indigo-500 text-2xl" />
                 </ListItemIcon>
                 {/* <ListItemText primary={"Persons"} /> */}
-                <Typography variant="h7" className="text-lg font-semibold">Persons</Typography>
+                <Typography variant="h7" className="text-lg font-semibold">
+                  Persons
+                </Typography>
               </ListItemButton>
             </Link>
           </ListItem>
           <ListItem key={"Machines"} disablePadding>
-            <Link href="showMachine">
+            <Link href="/showMachine">
               <ListItemButton>
                 <ListItemIcon>
-                  <CoffeeMakerIcon className="text-indigo-500 text-2xl"/>
+                  <CoffeeMakerIcon className="text-indigo-500 text-2xl" />
                 </ListItemIcon>
                 {/* <ListItemText primary={"Machines"} /> */}
-                <Typography variant="h7" className="text-lg font-semibold">Machines</Typography>
+                <Typography variant="h7" className="text-lg font-semibold">
+                  Machines
+                </Typography>
               </ListItemButton>
             </Link>
           </ListItem>
           <ListItem key={"Create Issue"} disablePadding>
-             <Link href="/inventory">
+            <Link href="/inventory">
               <ListItemButton>
                 <ListItemIcon>
-                  <AddCardIcon className="text-indigo-500 text-2xl"/>
+                  <AddCardIcon className="text-indigo-500 text-2xl" />
                 </ListItemIcon>
-                <Typography variant="h7" className="text-lg font-semibold">Inventory</Typography>
+                <Typography variant="h7" className="text-lg font-semibold">
+                  Inventory
+                </Typography>
               </ListItemButton>
             </Link>
           </ListItem>
@@ -121,10 +136,12 @@ const Nav = () => {
             <Link href="/createPerson">
               <ListItemButton>
                 <ListItemIcon>
-                  <PersonAddIcon className="text-indigo-500 text-2xl"/>
+                  <PersonAddIcon className="text-indigo-500 text-2xl" />
                 </ListItemIcon>
                 {/* <ListItemText primary={"Add Peson"} /> */}
-                <Typography variant="h7" className="text-lg font-semibold">Add Person</Typography>
+                <Typography variant="h7" className="text-lg font-semibold">
+                  Add Person
+                </Typography>
               </ListItemButton>
             </Link>
           </ListItem>
@@ -132,10 +149,12 @@ const Nav = () => {
             <Link href="/addMachine">
               <ListItemButton>
                 <ListItemIcon>
-                  <CoffeeMakerIcon className="text-indigo-500 text-2xl"/>
+                  <CoffeeMakerIcon className="text-indigo-500 text-2xl" />
                 </ListItemIcon>
                 {/* <ListItemText primary={"Add Machine"} /> */}
-                <Typography variant="h7" className="text-lg font-semibold">Add Machine</Typography>
+                <Typography variant="h7" className="text-lg font-semibold">
+                  Add Machine
+                </Typography>
               </ListItemButton>
             </Link>
           </ListItem>
@@ -143,34 +162,39 @@ const Nav = () => {
             <Link href="/createIssue">
               <ListItemButton>
                 <ListItemIcon>
-                  <AddCardIcon className="text-indigo-500 text-2xl"/>
+                  <AddCardIcon className="text-indigo-500 text-2xl" />
                 </ListItemIcon>
-                <Typography variant="h7" className="text-lg font-semibold">Create Issue</Typography>
+                <Typography variant="h7" className="text-lg font-semibold">
+                  Create Issue
+                </Typography>
               </ListItemButton>
             </Link>
           </ListItem>
           <ListItem key={"Create Issue"} disablePadding>
-             <Link href="/addinventory">
+            <Link href="/addinventory">
               <ListItemButton>
                 <ListItemIcon>
-                  <AddCardIcon className="text-indigo-500 text-2xl"/>
+                  <AddCardIcon className="text-indigo-500 text-2xl" />
                 </ListItemIcon>
-                <Typography variant="h7" className="text-lg font-semibold">Add Inventory</Typography>
+                <Typography variant="h7" className="text-lg font-semibold">
+                  Add Inventory
+                </Typography>
               </ListItemButton>
             </Link>
           </ListItem>
-         
+
           <ListItem key={"Create Issue"} disablePadding>
-             <Link href="/pdf">
+            <Link href="/pdf">
               <ListItemButton>
                 <ListItemIcon>
-                  <AddCardIcon className="text-indigo-500 text-2xl"/>
+                  <AddCardIcon className="text-indigo-500 text-2xl" />
                 </ListItemIcon>
-                <Typography variant="h7" className="text-lg font-semibold">Get Report</Typography>
+                <Typography variant="h7" className="text-lg font-semibold">
+                  Get Report
+                </Typography>
               </ListItemButton>
             </Link>
           </ListItem>
-         
         </List>
       </Drawer>
     </Box>
