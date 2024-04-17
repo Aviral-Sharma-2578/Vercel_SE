@@ -1,4 +1,4 @@
-//Nav.js
+
 "use client";
 import * as React from "react";
 import Dashboard from "../dashboard/page";
