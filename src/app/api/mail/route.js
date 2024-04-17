@@ -39,14 +39,13 @@ export async function POST(req) {
         
       Best Regards,`,
   };
-  const sendMail = async (transporter, mailOptions) => {
-    try {
-      await transporter.sendMail(mailOptions);
-      console.log("email sent successfully");
-    } catch (e) {
-      console.log(e);
-    }
-  };
-  sendMail(transporter, mailOptions);
-  // transporter.sendMail(mailOptions).then(() => { console.log("MAIL SEND SUCCESFULLY") })
+
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log("email sent successfully");
+    return NextResponse.json({ message: "mail sent" }, { status: 201 });
+  } catch (e) {
+    console.log(e);
+    return NextResponse.json({ message: "Error", error: e }, { status: 500 });
+  }
 }
