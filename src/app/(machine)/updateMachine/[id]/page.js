@@ -32,7 +32,7 @@ function UpdateMachine({ params }) {
     e.preventDefault();
     try {
       console.log(formData);
-      const response = await fetch(`http://localhost:3000/api/machine/${id}`, {
+      const response = await fetch(`/api/machine/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ function UpdateMachine({ params }) {
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3000/api/machine/${id}`, {
+      const response = await fetch(`/api/machine/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

@@ -3,7 +3,7 @@ import UpdateForm from "@/app/(components)/UpdateForm";
 const getPersonById = async (id) => {
   try {
     console.log("going in");
-    const res = await fetch(`http://localhost:3000/api/Persons/${id}`, {
+    const res = await fetch(`/api/Persons/${id}`, {
       cache: "no-store",
     });
 

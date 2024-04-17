@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 const getMachineById = async (id) => {
   try {
     console.log("going in");
-    const res = await fetch(`http://localhost:3000/api/machine/${id}`, {
+    const res = await fetch(`/api/machine/${id}`, {
       cache: "no-store",
     });
 

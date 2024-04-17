@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const page = ({ params }) => {
   const router = useRouter();
@@ -27,12 +27,9 @@ const page = ({ params }) => {
       if (params.id) {
         // Make sure the params.id is not undefined
         try {
-          const res = await fetch(
-            `http://localhost:3000/api/machine/${params.id}`,
-            {
-              cache: "no-store",
-            }
-          );
+          const res = await fetch(`/api/machine/${params.id}`, {
+            cache: "no-store",
+          });
 
           if (!res.ok) {
             throw new Error("Failed to fetch machine");
@@ -74,10 +71,10 @@ const page = ({ params }) => {
     console.log(formData);
     formData.orders.push(orderFormData);
     formData.total_quantity += orderFormData.quantity;
-    formData.available_quantity += orderFormData.quantity;    
+    formData.available_quantity += orderFormData.quantity;
     console.log(orderFormData);
 
-    fetch(`http://localhost:3000/api/machine/${params.id}`, {
+    fetch(`/api/machine/${params.id}`, {
       // Make sure to use 'params.id' from 'router.query'
       method: "PUT",
       headers: {
@@ -87,19 +84,19 @@ const page = ({ params }) => {
     })
       .then((response) => {
         if (!response.ok) {
-          toast.error("Something went wrong! Try again")
+          toast.error("Something went wrong! Try again");
           throw new Error("Network response was not ok");
         }
         return response.json();
       })
       .then((data) => {
-        toast.success("Order added successfully")
+        toast.success("Order added successfully");
         console.log("updated machine order", data);
         router.refresh(); // 'router.refresh()' is not a function in Next.js, use 'router.reload()' instead
         router.push("/showMachine");
       })
       .catch((error) => {
-        toast.error("Something went wrong! Try again")
+        toast.error("Something went wrong! Try again");
         console.error("Error:", error);
       });
   };

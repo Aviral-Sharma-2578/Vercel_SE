@@ -236,7 +236,7 @@ export default function Dashboard() {
           <div className="flex flex-col justify-center items-center ml-5%">
             <div className="flex-grow flex items-center justify-center ml-12 mr-2 pr-2 pl-12 py-0 my-0 lg:mr-12 lg:pr-12 w-full mb-28">
               <Image
-                src="NA_SEP._29-Converted.png"
+                src="/public/NA_SEP._29-Converted.png"
                 alt="Your Image"
                 layout="fixed"
                 width={600}

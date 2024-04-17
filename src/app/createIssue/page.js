@@ -3,8 +3,8 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const page = () => {
   const router = useRouter();
@@ -28,8 +28,6 @@ const page = () => {
   let [issue_id, set_issue_id] = useState(null);
   let [persons, setPersons] = useState([]);
 
-  
-
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -50,7 +48,7 @@ const page = () => {
   };
 
   const updatePerson = async (person) => {
-    const res = await fetch(`http://localhost:3000/api/Persons/${person._id}`, {
+    const res = await fetch(`/api/Persons/${person._id}`, {
       method: "PUT",
       body: JSON.stringify({ formData: person }),
       //@ts-ignore
@@ -65,7 +63,7 @@ const page = () => {
     }
   };
   const updateMachine = async (machine) => {
-    const res = await fetch(`http://localhost:3000/api/machine/${machine._id}`, {
+    const res = await fetch(`/api/machine/${machine._id}`, {
       method: "PUT",
       body: JSON.stringify({ formData: machine }),
       //@ts-ignore
@@ -98,21 +96,21 @@ const page = () => {
           current: [...prevPerson.current, { issue_id: issue.id }],
         };
         updatePerson(updatedPerson); // This will now be called after state is updated
-        
+
         return updatedPerson;
       });
       setSelectedMachine1((prevMachine) => {
         const updatedMachine = {
           ...prevMachine,
-          available_quantity:prevMachine.available_quantity-1,
+          available_quantity: prevMachine.available_quantity - 1,
         };
         updateMachine(updatedMachine); // This will now be called after state is updated
-       // toast.success("Issue Created Successfully")
+        // toast.success("Issue Created Successfully")
         return updatedMachine;
-        toast.success("Issue Created Successfully")
+        toast.success("Issue Created Successfully");
       });
     } else {
-      toast.error("Something went wrong! Try again")
+      toast.error("Something went wrong! Try again");
       throw new Error("Failed to create ticket");
     }
 
@@ -178,7 +176,7 @@ const page = () => {
   };
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-       <ToastContainer />
+      <ToastContainer />
       <div className="sm:max-w-xl sm:mx-auto">
         <div className="bg-white shadow-lg sm:rounded-3xl sm:p-8">
           <h2 className="text-3xl text-gray-900 text-center mb-8 font-bold">

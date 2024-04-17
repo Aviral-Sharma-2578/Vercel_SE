@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import UpdateMachine from "../updateMachine/[id]/page";
 import mongoose from "mongoose";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const MachineForm = () => {
   const defaultFormData = {
@@ -67,16 +67,13 @@ const MachineForm = () => {
   const updateMachine = async () => {
     console.log(parentMachine);
     console.log(parentMachine._id);
-    const res = await fetch(
-      ` http://localhost:3000/api/machine/${parentMachine._id}`,
-      {
-        method: "PUT",
-        body: JSON.stringify({ formData: parentMachine }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch(`/api/machine/${parentMachine._id}`, {
+      method: "PUT",
+      body: JSON.stringify({ formData: parentMachine }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     console.log(res);
     if (!res.ok) {
       throw new Error("Failed to update machine.");
@@ -107,11 +104,10 @@ const MachineForm = () => {
         });
         console.log(result);
         setParentMachine(result);
-        toast.success("Machine Added Successfully")
-
+        toast.success("Machine Added Successfully");
       }
     } else {
-      toast.error("Something went wrong! Try again")
+      toast.error("Something went wrong! Try again");
       throw new Error("Failed to create machine");
     }
     router.refresh();
