@@ -17,7 +17,7 @@ const page = () => {
     is_returnable: true,
     due_date: new Date().toISOString().split("T")[0],
     order_is_completed: false,
-    description: "dj",
+    description: "",
   };
 
   let [formData, setFormData] = useState(defaultFormData);
