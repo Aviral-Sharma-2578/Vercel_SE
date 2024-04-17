@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import RequireAuth from "@/app/(components)/RequireAuth";
 
 function UpdateMachine({ params }) {
   const router = useRouter();
@@ -69,6 +70,7 @@ function UpdateMachine({ params }) {
   }
 
   return (
+    <RequireAuth>
     <div className="bg-orange-50 min-h-screen flex items-center justify-center">
       <div className="max-w-md mx-auto mt-8 bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">Update Machine</h2>
@@ -152,6 +154,7 @@ function UpdateMachine({ params }) {
         </form>
       </div>
     </div>
+    </RequireAuth>
   );
 }
 

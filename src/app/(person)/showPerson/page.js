@@ -9,6 +9,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import { useRouter } from "next/navigation";
+import RequireAuth from "@/app/(components)/RequireAuth";
 
 import {
   Dialog,
@@ -207,6 +208,7 @@ const page = () => {
 
   return (
     <>
+    <RequireAuth>
       <div className="mb-2 mt-4">
         <input
           type="text"
@@ -372,6 +374,7 @@ const page = () => {
           </DialogActions>
         </Dialog>
       </div>
+      </RequireAuth>
     </>
   );
 };

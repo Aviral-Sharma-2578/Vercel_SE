@@ -4,6 +4,7 @@ import Link from "next/link";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import RequireAuth from "@/app/(components)/RequireAuth";
 
 function YourComponent() {
   let [machines, setMachines] = useState([]);
@@ -62,6 +63,7 @@ function YourComponent() {
 
   return (
     <>
+    <RequireAuth>
     <div className="mb-2 mt-4">
     <input
       type="text"
@@ -178,6 +180,7 @@ function YourComponent() {
         </tbody>
       </table>
     </div>
+    </RequireAuth>
     </>
   );
 }

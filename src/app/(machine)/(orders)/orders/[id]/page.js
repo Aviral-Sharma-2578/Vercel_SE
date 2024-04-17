@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import RequireAuth from "@/app/(components)/RequireAuth";
 
 const getMachineById = async (id) => {
   try {
@@ -36,7 +37,7 @@ const page = async ({ params }) => {
     build_number: 0,
     quantity: 0,
     vendor: "", */}
-
+      <RequireAuth>
       <div>
         <Link className="m-5" href={`/createOrder/${params.id}`}>
           <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center">
@@ -142,6 +143,7 @@ const page = async ({ params }) => {
           </table>
         </div>
       </div>
+      </RequireAuth>
     </>
   );
 };

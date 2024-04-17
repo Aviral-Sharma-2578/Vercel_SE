@@ -5,6 +5,7 @@ import UpdateMachine from "../updateMachine/[id]/page";
 import mongoose from "mongoose";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import RequireAuth from "@/app/(components)/RequireAuth";
 
 const MachineForm = () => {
   const defaultFormData = {
@@ -115,6 +116,7 @@ const MachineForm = () => {
   };
 
   return (
+    <RequireAuth>
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <ToastContainer />
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -271,6 +273,7 @@ const MachineForm = () => {
         </div>
       </div>
     </div>
+    </RequireAuth>
   );
 };
 

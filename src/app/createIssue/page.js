@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import RequireAuth from "@/app/(components)/RequireAuth";
 
 const page = () => {
   const router = useRouter();
@@ -176,6 +177,7 @@ const page = () => {
     console.log("++", formData);
   };
   return (
+    <RequireAuth>
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <ToastContainer />
       <div className="sm:max-w-xl sm:mx-auto">
@@ -287,6 +289,7 @@ const page = () => {
         </div>
       </div>
     </div>
+    </RequireAuth>
   );
 };
 
