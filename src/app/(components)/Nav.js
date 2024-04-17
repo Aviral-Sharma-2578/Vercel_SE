@@ -182,7 +182,7 @@ const Nav = () => {
               </ListItemButton>
             </Link>
           </ListItem>
-
+          <Divider />
           <ListItem key={"Create Issue"} disablePadding>
             <Link href="/pdf">
               <ListItemButton>
