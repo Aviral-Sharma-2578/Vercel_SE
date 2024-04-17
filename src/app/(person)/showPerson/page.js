@@ -147,7 +147,7 @@ const page = () => {
   const handleEmailSend = async (userId, issueId) => {
     console.log(userId);
     const formData = { userId: userId, issueId: issueId };
-    const res = await fetch(`http://localhost:3000/api/mail`, {
+    const res = await fetch(`/api/mail`, {
       method: "POST",
       body: JSON.stringify(formData),
     });
@@ -157,9 +157,9 @@ const page = () => {
   };
   const handleCurrentIssue = async (userId, issueId) => {
     console.log(userId);
-    console.log(issueId)
+    console.log(issueId);
     const formData = { userId: userId, issueId: issueId };
-    const res = await fetch(`http://localhost:3000/api/updateIssue`, {
+    const res = await fetch(`/api/updateIssue`, {
       method: "PUT",
       body: JSON.stringify(formData),
     });
@@ -169,20 +169,17 @@ const page = () => {
   };
 
   const handleGetIssueDetails = async (issueId) => {
-    const res = await fetch(`http://localhost:3000/api/Issues/${issueId}`, {
+    const res = await fetch(`/api/Issues/${issueId}`, {
       method: "GET",
     });
     const data = await res.json();
     const machine_id = data.foundIssue.machine_id;
-    console.log( data.foundIssue.is_returnable);
+    console.log(data.foundIssue.is_returnable);
     //console.log(machine_id);
     console.log(data.foundIssue.due_date);
-    const res2 = await fetch(
-      `http://localhost:3000/api/machine/${machine_id}`,
-      {
-        method: "GET",
-      }
-    );
+    const res2 = await fetch(`/api/machine/${machine_id}`, {
+      method: "GET",
+    });
     const data2 = await res2.json();
     console.log(data2.foundMachine.machine_name);
     return {
@@ -330,7 +327,8 @@ const page = () => {
                       Machine Name: {item.machineDetails.machineName}
                     </span>
                     <span className="mx-4">
-                      Returnable: {item.machineDetails.is_returnable  ? "Yes" : "No"}
+                      Returnable:{" "}
+                      {item.machineDetails.is_returnable ? "Yes" : "No"}
                     </span>
                     {item.machineDetails.is_returnable ? (
                       <Button

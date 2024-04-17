@@ -1,4 +1,3 @@
-"use client";
 import UpdateForm from "@/app/(components)/UpdateForm";
 
 const getPersonById = async (id) => {
