@@ -79,7 +79,7 @@ const UpdateForm = ({ person }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`http://localhost:3000/api/Persons/${person._id}`, {
+    const res = await fetch(`/api/Persons/${person._id}`, {
       method: "PUT",
       body: JSON.stringify({ formData }),
       //@ts-ignore
