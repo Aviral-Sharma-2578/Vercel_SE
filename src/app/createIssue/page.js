@@ -115,6 +115,7 @@ const page = () => {
     }
 
     router.refresh();
+    router.push("/showPerson");
   };
 
   useEffect(() => {

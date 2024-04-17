@@ -9,7 +9,7 @@ const page = async ({ params }) => {
   });
   if (res.ok) {
     router.refresh();
-    router.push("/showPerson");
+    router.push("/");
   }
 };
 
